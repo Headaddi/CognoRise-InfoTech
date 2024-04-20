@@ -2,96 +2,113 @@
 *{
     margin: 0;
     border: 0;
-    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
-body{
+.container{
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+    background: linear-gradient(45deg, #096666, #3a0d45);
+}
+#to-do{
+    width: 100%;
+    max-width: 540px;
+    background-color: white;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+#to-do h2{
     display: flex;
     align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #2f363e;
-    color: white;   
+    margin-bottom: 20px;
 }
 
-.box{
-    position: relative;
-    width: 450px;
-    height: 650px;
-    padding: 50px 50px;
-    background-color: #2f363e;
-    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
-    10px 10px 70px rgba(0,0,0,0.25),
-    inset 5px 5px 10px rgba(0,0,0,0.5),
-    inset 5px 5px 20px rgba(255,255,255,0.2),
-    inset -5px -5px 15px rgba(0,0,0,0.75);
+#to-do h2 img{
+    margin-left: 20px;
 }
 
-h1{
-    text-align: center;
-    margin: 20px;
-}
 form{
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    background-color: #edeef0;
+    border-radius: 40px;
 }
 
-label{
-    display: flex;
-    justify-content: center;
-
-}
-
-#weight{
-    display: block;
-    width: 80%;
-    height: 40px;  
-    margin: auto;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    text-align: right;
-    padding: 10px;
-    font-size: 1.5rem;   
-}
-
-#height{
-    display: block;
-    width: 80%;
-    height: 40px;  
-    margin: auto;
-    margin-top: 10px;
-    border: none;
-    border-radius: 5px;
-    text-align: right;
-    padding: 10px;
-    font-size: 1.5rem; 
-    cursor: pointer;  
+#inputBox{
+   background: transparent;
+   padding: 10px;
+   border: none;
+   font-size: 1rem;
+   flex: 1;
+   outline: none;
+   border-radius: 40px;
+   
 }
 
 button{
+    padding: 15px 40px;
+    font-size: 1rem;
     background-color: green;
     color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    width: 80%;
-    margin: auto;
-    margin-top: 30px;  
-    cursor: pointer; 
-}
-button:hover{
-    background-color: rgba(0, 128, 0, 0.7);
-}
-button:active{
-    background-color: rgba(0, 128, 0, 0.9);
+    border-radius: 40px;
+    outline: none;
+    cursor: pointer;
 }
 
-#result{
+button:hover{   
+    background-color: rgb(0, 100, 0);
+}
+
+button:active{
+    background-color: rgb(0, 150, 0);  
+}
+
+
+li{
+    list-style: none;
+    font-size: 1rem;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+li::before{
+    position: absolute;
+    content: '';
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url("assets/unchecked.png");
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+.checked::before{
+    background-image: url("assets/checked.png");
+}
+ul span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
     text-align: center;
-    margin-top: 20px;
-    font-weight: bold;
+    border-radius: 50%;
+}
+ul span:hover{
+    background: #edeef0;
 }
