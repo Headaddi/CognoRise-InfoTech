@@ -1,59 +1,114 @@
-button{
-    width: 100px;
-    height: 100px;
-    font-size: 2rem;
-    border: none;
-    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    border-radius: 16px;
-    background: transparent;
-    
-}
-#display{
-    width: 100%;
-    height: 100px;
-    text-align: end;
-    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
-    border: none;
-    margin-bottom: 20px;
-    border-radius: 16px;
-    background: transparent;
-    font-size: 2rem;
-    padding: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    margin: 0;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
 .container{
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+    background: linear-gradient(45deg, #096666, #3a0d45);
+}
+#to-do{
+    width: 100%;
+    max-width: 540px;
+    background-color: white;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+#to-do h2{
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
-    padding: 20px;
-    
+    margin-bottom: 20px;
 }
-.calculator{
-    padding: 20px;
-    
+
+#to-do h2 img{
+    margin-left: 20px;
 }
-#keys{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+
+form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #edeef0;
+    border-radius: 40px;
 }
-#equalButton{
-   width: 220%;
+
+#inputBox{
+   background: transparent;
+   padding: 10px;
+   border: none;
+   font-size: 1rem;
+   flex: 1;
+   outline: none;
+   border-radius: 40px;
+   
 }
-.operator{
-    background-color: rgb(160, 155, 148);
+
+button{
+    padding: 15px 40px;
+    font-size: 1rem;
+    background-color: green;
+    color: white;
+    border-radius: 40px;
+    outline: none;
+    cursor: pointer;
 }
-.operator:hover{
-    background-color: rgba(160, 155, 148, 0.9);
+
+button:hover{   
+    background-color: rgb(0, 100, 0);
 }
-.operator:active{
-    background-color: rgba(160, 155, 148, 0.5);
-}
-button:hover{
-    background-color: rgba(223, 227, 231);
-}
+
 button:active{
-    background-color: rgba(223, 227, 231, 0.5);
+    background-color: rgb(0, 150, 0);  
+}
+
+
+li{
+    list-style: none;
+    font-size: 1rem;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+li::before{
+    position: absolute;
+    content: '';
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url("assets/unchecked.png");
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+.checked::before{
+    background-image: url("assets/checked.png");
+}
+ul span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+ul span:hover{
+    background: #edeef0;
 }
